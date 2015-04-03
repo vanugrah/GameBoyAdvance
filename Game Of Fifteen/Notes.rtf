@@ -1,0 +1,109 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf140
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12600\viewh6020\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 \
+Notes: \
+have a \
+const unsigned short* nums[10];\
+\
+nums[0] = zero_data;\
+nums[1] = one_data;\
+\'85..\
+and on \
+\
+so that you have the image data for each one of the tiles. \
+\
+\
+Each tile can be a struct which contains \
+- enum of free spaces to move\
+- const unsigned short for the image data\
+\
+could also have an array with the pixel locations of the different positions in the grid. a 2D array of x and y pixels\
+\
+\
+\
+
+\b Intro notes: \
+
+\b0 \
+Welcome Traveller!\
+The village is in peril and we need your help! The evil sorcerer Bill has taken control of King Joffery with his dark magic. \
+\
+The prophecy tells of a brave, young traveler, with the strength of an ox and the wit of a that will solve the sorcerers evil puzzle and restore order to the land. \
+\
+Are you worthy to take on this unconquerable Quest? \
+\
+A - Yes 			B - No\
+\
+Splendid! May the odds be in your favor. \
+A - Continue \
+\
+80 - width \
+80 - height\
+ to 0,0\
+for (int i = 0; i < 80; i++) \{\
+	DMA[3].SRC = my_array2 + i*80;\
+	DMA[3].DST = videobuffer + i*240;\
+	DMA[3].CRT = 80 | DMA_ON;  \
+\}\
+\
+\
+80 - width \
+80 - height\
+ to 80, 0\
+for (int i = 0; i < 80; i++) \{\
+	DMA[3].SRC = my_array2 + i*80;\
+	DMA[3].DST = videobuffer + i*240 + 80;\
+	DMA[3].CRT = 80 | DMA_ON;  \
+\}\
+\
+80 - width \
+80 - height\
+ to 80, 80\
+for (int i = 0; i < 80; i++) \{\
+	DMA[3].SRC = my_array2 + i*80;\
+	DMA[3].DST = videobuffer + 80 + 80*240  + i*240 ;\
+	DMA[3].CRT = 80 | DMA_ON;  \
+\}\
+\
+240x80 - to top half\
+	DMA[3].SRC = my_array2;\
+	DMA[3].DST = videobuffer;\
+	DMA[3].CRT = 80*240 | DMA_ON;  \
+	\
+240x80 - to bottom half\
+	DMA[3].SRC = my_array2;\
+	DMA[3].DST = videobuffer + 80*240;\
+	DMA[3].CRT = 80*240 | DMA_ON; \
+\
+\
+\
+
+\b Things left to do:
+\b0 \
+- load tiles to grid \
+- load blank tile \
+- move up/down left/right \
+- test won function \
+- ending screen\
+- reset \
+\
+\
+\
+
+\b Co-ordinates\
+
+\b0 [0,0] = [51, 11]\
+[1,0] = [100, 11]\
+[2,0] = [148, 11]\
+[0,1] = [51, 60]\
+[1,1] = [100, 60]\
+[2,1] = [148, 60]\
+[0,2] = [51, 109]\
+[1,2] = [100, 109]\
+[2,2] = [148, 109]\
+\
+}
